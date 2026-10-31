@@ -8,13 +8,14 @@ At least six hands. Work out each expected value from the rules **before** you r
 
 | Hand | Expected `value()` | `is_bust()` | `is_blackjack()` |
 | --- | --- | --- | --- |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-
+| A K | 21  | false | true |
+| A A 9 | 21 | false | false |
+| A 6 5 | 12 | false | false |
+| A A A 8 | 21 | false | false |
+| A 7 | 18 | false | false |
+| A 9 5 | 15 | false | false |
+| T T 5 | 25 | true | false |
+| 7 7 7 | 21 | false | false |
 ## 2. Design artifacts
 
 List the files you added and where they are in the repository.
