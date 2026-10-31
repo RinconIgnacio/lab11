@@ -20,9 +20,9 @@ At least six hands. Work out each expected value from the rules **before** you r
 
 List the files you added and where they are in the repository.
 
-- Updated class diagram (with `Hand` and its relationship to `Card`):
-- Flowchart for `Hand::value`:
-- Flowchart for the dealer's turn:
+- Updated class diagram (with `Hand` and its relationship to `Card`): `DIAGRAMS.md`
+- Flowchart for `Hand::value`: `DIAGRAMS.md`
+- Flowchart for the dealer's turn: `DIAGRAMS.md`
 
 ## 3. Ownership classification
 
@@ -30,9 +30,12 @@ For each relationship, write **composition**, **aggregation**, or **association*
 
 | Relationship | Composition, aggregation, or association | One-sentence justification |
 | --- | --- | --- |
-| `Hand` and its `Card`s | | |
-| The Blackjack game and its `Deck` and `Hand`s | | |
-| `Player` and the current `Room*` in the Dungeon | | |
+| `Hand` and its `Card`s | Composition | The cards are stored directly inside the Hand, so when the Hand is destroyed, its cards are destroyed too. |
+| The Blackjack game and its `Deck` and `Hand`s | Composition | 
+ The game creates and manages its own deck and hands, and these objects are destroyed when the game session ends. |
+| `Player` and the current `Room*` in the Dungeon | Association | 
+ The Player only stores a pointer to the Room and does not own it, so destroying the Player does not destroy the Room. |
+
 
 ## 4. Checklist before you push
 
